@@ -16,7 +16,7 @@ export class BuildProcess extends ProcessBase {
     ]
     public Type = 'Build';
 
-    constructor(public Name: string, private Path: string, private buildOptions: any = [], private Memory: number = 2048) {
+    constructor(public Name: string, private Path: string, private buildOptions: any = [], private Memory: number = 8096) {
         super();
     }
 

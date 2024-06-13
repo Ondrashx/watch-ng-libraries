@@ -13,11 +13,11 @@ export class ProcessList extends Array<IProcess>
         if (build) {
             libraries.forEach(x => this.push(new BuildProcess(x, path)));
             if (project !== "") {
-                this.push(new BuildProcess(project, path, buildOptions));
+                this.push(new BuildProcess(project, path, buildOptions, memory));
             }
         } else {
             libraries.forEach(x => this.push(new WatchProcess(x, path)));
-            this.push(new ServeProcess(project, path, detached));
+            this.push(new ServeProcess(project, path, detached, undefined, memory));
         }
         if (!verbose) {
             new Logger(this);

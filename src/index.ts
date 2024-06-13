@@ -32,7 +32,7 @@ program
     .option('-p, --detached', 'run ng serve command in detached window for detailed output')
     .option('-r, --delete', 'clean-up ./dist directory in angular project')
     .option('-v, --verbose', 'detailed output from ng compiler')
-    .option('-m, --memory <megabytes>', 'set node\'s --max-old-space-size to defined amount for application build. default is 2048MB')
+    .option('-m, --memory <megabytes>', 'set node\'s --max-old-space-size to defined amount for application build. default is 8096')
     .option('-a, --ngccarguments <ng_build_option1,ng_build_option2,...>', 'production build with list of ng build options passed to application build')
     .option('-o, --port <number>', 'port where to serve')
     .description("Command to serve project.")
@@ -45,7 +45,7 @@ program
     .option('-p, --detached', 'run ng serve command in detached window for detailed output')
     .option('-r, --delete', 'clean-up ./dist directory in angular project')
     .option('-v, --verbose', 'detailed output from ng compiler')
-    .option('-m, --memory <megabytes>', 'set node\'s --max-old-space-size to defined amount for application build. default is 2048MB')
+    .option('-m, --memory <megabytes>', 'set node\'s --max-old-space-size to defined amount for application build. default is 8096MB')
     .option('-a, --ngccarguments <ng_build_option1,ng_build_option2,...>', 'production build with list of ng build options passed to application build')
     .option('-o, --omit', 'all libraries are build except the application. Needed in case when application needs extra build configurations.')
     .description("Command to build project.")
@@ -113,7 +113,7 @@ function runServe(project: string) {
         false,
         command.ngccarguments ? (command.ngccarguments.split(',')) : [],
         command.verbose,
-        command.memory || 2048,
+        command.memory || 8096,
         command.port || 4200
     );
 }
@@ -136,7 +136,7 @@ function runBuild(project: string) {
         true,
         command.ngccarguments ? (command.ngccarguments.split(',')) : [],
         command.verbose,
-        command.memory || 2048,
+        command.memory || 8096,
         command.port || 4200
     );
 }

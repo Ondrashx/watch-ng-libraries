@@ -20,7 +20,7 @@ export class ServeProcess extends ProcessBase {
     Type = 'Serve';
     Port: number | undefined;
     private BuildOptions: Array<string>;
-    constructor(public Name: string, private Path: string, private Detached: boolean | null, buildOptions: Array<string> = [], private Memory: number = 2048) {
+    constructor(public Name: string, private Path: string, private Detached: boolean | null, buildOptions: Array<string> = [], private Memory: number = 8096) {
         super();
         this.BuildOptions = buildOptions ? buildOptions : [];
     }
